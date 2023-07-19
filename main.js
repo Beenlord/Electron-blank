@@ -13,7 +13,7 @@ function createNewWindow(opt = {}) {
   const w = new BrowserWindow({
     ...opt,
     webPreferences: {
-      preload: path.join(__dirname, 'renderer.js'),
+      preload: path.join(__dirname, 'renderer', 'preload.js'),
     },
   });
 

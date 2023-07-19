@@ -6,6 +6,8 @@ window.addEventListener('DOMContentLoaded', () => {
   console.log('Blnk app by Beenlord.');
 
   const cat = new mewFunction();
+
+  cat.sayMur();
   
   document
     .querySelector('.mew-button')
@@ -17,6 +19,10 @@ window.addEventListener('DOMContentLoaded', () => {
         cat.sayMew();
         interval = setTimeout(() => {
           interval = null;
+          interval = setTimeout(() => {
+            interval = null;
+            cat.sayMur();
+          }, 700);
         }, 500);
       }
     });
@@ -39,6 +45,9 @@ function mewFunction() {
   }
 
   return {
+    sayMur() {
+      play(() => setSrc('mur'));
+    },
     sayMew() {
       play(() => setSrc('mew'));
     },
